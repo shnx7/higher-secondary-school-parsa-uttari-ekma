@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>उच्च माध्यमिक विद्यालय, परसा उत्तरी | Parsa Uttari School</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-maroon: #800000;
+            --secondary-gold: #DAA520;
+            --accent-navy: #0a2540;
+            --light-bg: #f8f9fa;
+            --border-color: #e9ecef;
+        }
+
+        body {
+            font-family: 'Poppins', 'Tiro Devanagari Hindi', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        /* Top Government Header Ticker */
+        .top-bar {
+            background-color: var(--accent-navy);
+            color: #fff;
+            font-size: 0.88rem;
+            padding: 6px 0;
+        }
+
+        .govt-logo-badge {
+            max-height: 50px;
+        }
+
+        /* Main Header Banner */
+        .main-header {
+            background: linear-gradient(135deg, #800000 0%, #5a0000 100%);
+            color: white;
+            padding: 20px 0;
+            border-bottom: 4px solid var(--secondary-gold);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .school-title-hi {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 2px 4px rgba(0,0,0,0.4);
+        }
+
+        .school-title-en {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .code-badge {
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 0.85rem;
+            color: #ffe600;
+        }
+
+        /* Navigation Bar */
+        .navbar-custom {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            padding: 0;
+        }
+
+        .navbar-custom .nav-link {
+            color: var(--accent-navy);
+            font-weight: 600;
+            padding: 14px 20px !important;
+            transition: all 0.2s ease;
+        }
+
+        .navbar-custom .nav-link:hover, .navbar-custom .nav-link.active {
+            color: var(--primary-maroon);
+            background-color: #fff3f3;
+            border-bottom: 3px solid var(--primary-maroon);
+        }
+
+        /* Hero Section Slider/Banner */
+        .hero-section {
+            background: linear-gradient(rgba(10, 37, 64, 0.75), rgba(128, 0, 0, 0.75)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+            color: white;
+            padding: 70px 0;
+            border-radius: 0 0 20px 20px;
+        }
+
+        /* Card Customizations */
+        .custom-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            background: white;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        /* Staff Cards */
+        .staff-card {
+            border-top: 4px solid var(--primary-maroon);
+            text-align: center;
+            padding: 24px 16px;
+        }
+
+        .staff-img-container {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 15px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--secondary-gold);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        .staff-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .staff-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-maroon);
+            margin-bottom: 4px;
+        }
+
+        .staff-designation {
+            font-size: 0.9rem;
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .detail-badge {
+            background-color: #f0f4f8;
+            color: var(--accent-navy);
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            display: inline-block;
+            margin: 2px;
+        }
+
+        /* Notice Board */
+        .notice-board-card {
+            border-left: 5px solid var(--secondary-gold);
+        }
+
+        .notice-item {
+            border-bottom: 1px dashed var(--border-color);
+            padding: 12px 0;
+            position: relative;
+        }
+
+        .notice-item:last-child {
+            border-bottom: none;
+        }
+
+        .notice-date {
+            font-size: 0.75rem;
+            color: #777;
+        }
+
+        .custom-badge {
+            font-size: 0.72rem;
+            padding: 3px 8px;
+        }
+
+        /* Admin Controls */
+        .admin-box {
+            background-color: #fff9e6;
+            border: 1px dashed var(--secondary-gold);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--accent-navy);
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+            padding: 40px 0 20px 0;
+            margin-top: 50px;
+        }
+
+        footer h5 {
+            color: #fff;
+            border-bottom: 2px solid var(--secondary-gold);
+            padding-bottom: 8px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .delete-btn {
+            position: absolute;
+            right: 0;
+            top: 12px;
+            color: #dc3545;
+            cursor: pointer;
+            padding: 2px 6px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .delete-btn:hover {
+            background-color: #ffe6e6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+            <div>
+                <i class="fas fa-map-marker-alt text-warning me-1"></i> प्रखंड-एकमा, सारण, बिहार
+                <span class="ms-3 d-none d-md-inline"><i class="fas fa-phone-alt text-warning me-1"></i> Helpline: +91 8809997352</span>
+            </div>
+            <div>
+                <button class="btn btn-sm btn-outline-light py-0 fs-7" id="adminLoginBtn" onclick="toggleAdminLogin()">
+                    <i class="fas fa-lock me-1"></i> <span id="adminBtnText">Admin Login</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main School Header -->
+    <header class="main-header">
+        <div class="container text-center text-md-start">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center mb-3 mb-md-0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Seal_of_Bihar.svg/240px-Seal_of_Bihar.svg.png" alt="Bihar Govt Logo" class="govt-logo-badge bg-white p-1 rounded-circle">
+                </div>
+                <div class="col-md-10">
+                    <div class="school-title-hi">उच्च माध्यमिक विद्यालय, परसा उत्तरी</div>
+                    <div class="school-title-en text-light mb-2">Higher Secondary School, Parsa Uttari (Ekma, Saran)</div>
+                    <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-md-start">
+                        <span class="code-badge"><i class="fas fa-university me-1"></i> UDISE: <strong>10170608805</strong></span>
+                        <span class="code-badge"><i class="fas fa-certificate me-1"></i> माध्यमिक कोड: <strong>91409</strong></span>
+                        <span class="code-badge"><i class="fas fa-graduation-cap me-1"></i> उच्च माध्यमिक कोड: <strong>41358</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container">
+            <button class="navbar-toggler my-2 ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#home"><i class="fas fa-home me-1"></i> मुख्य पृष्ठ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#notice-section"><i class="fas fa-bullhorn me-1"></i> सूचना पट</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#staff-section"><i class="fas fa-user-tie me-1"></i> शिक्षक एवं कर्मचारी</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#facilities"><i class="fas fa-school me-1"></i> सुविधाएं</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact"><i class="fas fa-envelope me-1"></i> संपर्क करें</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <span class="badge bg-success py-2 px-3"><i class="fas fa-check-circle me-1"></i> बिहार सरकार द्वारा मान्यता प्राप्त</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero-section text-center" id="home">
+        <div class="container">
+            <h1 class="display-5 fw-bold mb-3">शिक्षा एवं उज्ज्वल भविष्य का केंद्र</h1>
+            <p class="lead mb-4 max-w-700 mx-auto">उच्च माध्यमिक विद्यालय, परसा उत्तरी, गुणवत्तापूर्ण शिक्षा, अनुशासन और सर्वांगीण विकास के लिए कटिबद्ध है।</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#staff-section" class="btn btn-warning btn-lg fw-semibold"><i class="fas fa-users me-2"></i>स्टाफ सूची देखें</a>
+                <a href="#contact" class="btn btn-outline-light btn-lg fw-semibold"><i class="fas fa-paper-plane me-2"></i>संपर्क करें</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notice Ticker Bar -->
+    <div class="bg-warning py-2 text-dark border-bottom border-top border-dark border-opacity-10">
+        <div class="container d-flex align-items-center">
+            <span class="badge bg-danger fs-6 me-3 flex-shrink-0"><i class="fas fa-bell me-1"></i> ताज़ा अपडेट:</span>
+            <marquee class="fw-semibold text-dark" id="topMarquee">
+                उच्च माध्यमिक विद्यालय, परसा उत्तरी में सत्र 2026-27 के लिए नए नामांकन प्रारंभ हैं। विस्तृत जानकारी के लिए विद्यालय कार्यालय से संपर्क करें।
+            </marquee>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="container my-5">
+        <div class="row g-4">
+            
+            <!-- Left Main Column: Staff Directory & Information -->
+            <div class="col-lg-8">
+                
+                <!-- Principal's Message -->
+                <div class="card custom-card p-4 mb-4">
+                    <div class="row align-items-center">
+                        <div class="col-md-3 text-center mb-3 mb-md-0">
+                            <img src="https://via.placeholder.com/150/800000/FFFFFF?text=Principal" alt="Pradhanadhyapak" class="img-fluid rounded-circle border border-3 border-warning shadow-sm" style="max-width: 120px;">
+                        </div>
+                        <div class="col-md-9">
+                            <h4 class="fw-bold text-maroon mb-1" style="color: var(--primary-maroon);">प्रधानाध्यापक का संदेश</h4>
+                            <p class="text-muted small mb-2"><strong>अरविन्द कुमार शर्मा</strong> (प्रधानाध्यापक, 9-12)</p>
+                            <p class="mb-0 text-secondary" style="font-size: 0.95rem;">
+                                "हमारा उद्देश्य केवल किताबी ज्ञान देना नहीं, बल्कि प्रत्येक छात्र में नैतिक मूल्य, वैज्ञानिक दृष्टिकोण और नेतृत्व क्षमता का विकास करना है। विद्यालय परिवार सभी छात्र-छात्राओं के उज्ज्वल भविष्य की कामना करता है।"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Staff Section -->
+                <div id="staff-section" class="pt-2">
+                    <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+                        <div>
+                            <h3 class="fw-bold m-0" style="color: var(--primary-maroon);"><i class="fas fa-user-shield me-2"></i>पदस्थापित शिक्षक एवं कर्मचारी</h3>
+                            <small class="text-muted">कार्यालय अभिलेखानुसार अधिकृत सूची</small>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <!-- Staff 1: Arvind Kumar Sharma -->
+                        <div class="col-md-6">
+                            <div class="card custom-card staff-card h-100">
+                                <div class="staff-img-container">
+                                    <img src="https://via.placeholder.com/150/800000/FFFFFF?text=AKS" alt="अरविन्द कुमार शर्मा" class="staff-img">
+                                </div>
+                                <div class="staff-name">अरविन्द कुमार शर्मा</div>
+                                <div class="staff-designation text-primary"><i class="fas fa-user-tie me-1"></i> प्रधानाध्यापक (9-12)</div>
+                                <div class="mb-3">
+                                    <span class="detail-badge"><i class="fas fa-book me-1"></i> विषय: गणित</span>
+                                    <span class="detail-badge"><i class="fas fa-user-gradle me-1"></i> योग्यता: M.Sc. B.Ed.</span>
+                                </div>
+                                <div class="text-start fs-7 text-muted border-top pt-2 mt-auto">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span><i class="far fa-calendar-alt text-warning me-1"></i> पदस्थापन:</span>
+                                        <strong>17.07.2025</strong>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span><i class="far fa-calendar-check text-success me-1"></i> योगदान:</span>
+                                        <strong>23.07.2025</strong>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span><i class="fas fa-phone text-primary me-1"></i> संपर्क:</span>
+                                        <a href="tel:8809997352" class="text-decoration-none fw-bold">8809997352</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Staff 2: Dinesh Kumar -->
+                        <div class="col-md-6">
+                            <div class="card custom-card staff-card h-100">
+                                <div class="staff-img-container">
+                                    <img src="https://via.placeholder.com/150/0a2540/FFFFFF?text=DK" alt="दिनेश कुमार" class="staff-img">
+                                </div>
+                                <div class="staff-name">दिनेश कुमार</div>
+                                <div class="staff-designation text-secondary"><i class="fas fa-user-cog me-1"></i> लिपिक (Clerk)</div>
+                                <div class="mb-3">
+                                    <span class="detail-badge"><i class="fas fa-file-alt me-1"></i> विषय: -</span>
+                                    <span class="detail-badge"><i class="fas fa-user-graduate me-1"></i> योग्यता: B.Sc.</span>
+                                </div>
+                                <div class="text-start fs-7 text-muted border-top pt-2 mt-auto">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span><i class="far fa-calendar-alt text-warning me-1"></i> पदस्थापन:</span>
+                                        <strong>03.09.2025</strong>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span><i class="far fa-calendar-check text-success me-1"></i> योगदान:</span>
+                                        <strong>08.09.2025</strong>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span><i class="fas fa-phone text-primary me-1"></i> संपर्क:</span>
+                                        <a href="tel:9128838606" class="text-decoration-none fw-bold">9128838606</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Facilities Section -->
+                <div id="facilities" class="pt-5">
+                    <h3 class="fw-bold mb-4" style="color: var(--primary-maroon);"><i class="fas fa-building me-2"></i>विद्यालय की मुख्य सुविधाएं</h3>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="p-3 bg-white rounded custom-card d-flex align-items-center">
+                                <i class="fas fa-laptop-code fa-2x text-primary me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-0">कंप्यूटर लैब</h6>
+                                    <small class="text-muted">आधुनिक कंप्यूटर और डिजिटल शिक्षा</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="p-3 bg-white rounded custom-card d-flex align-items-center">
+                                <i class="fas fa-flask fa-2x text-danger me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-0">विज्ञान प्रयोगशाला</h6>
+                                    <small class="text-muted">भौतिकी, रसायन एवं जीव विज्ञान लैब</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="p-3 bg-white rounded custom-card d-flex align-items-center">
+                                <i class="fas fa-book-reader fa-2x text-success me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-0">पुस्तकालय</h6>
+                                    <small class="text-muted">विभिन्न विषयों की पुस्तकों का समृद्ध संग्रह</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="p-3 bg-white rounded custom-card d-flex align-items-center">
+                                <i class="fas fa-playstation fa-2x text-warning me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-0">खेल का मैदान</h6>
+                                    <small class="text-muted">शारीरिक विकास हेतु खेलकूद की व्यवस्था</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Sidebar: Interactive Notice Board & Admin Controls -->
+            <div class="col-lg-4" id="notice-section">
+                
+                <!-- Admin Control Notice Add Box (Visible only after Admin Login) -->
+                <div id="adminNoticePanel" class="admin-box d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h6 class="fw-bold text-dark m-0"><i class="fas fa-edit me-1"></i> Admin Panel: नई सूचना प्रकाशित करें</h6>
+                        <span class="badge bg-danger" style="cursor: pointer;" onclick="logoutAdmin()"><i class="fas fa-sign-out-alt me-1"></i> Logout</span>
+                    </div>
+                    <form id="addNoticeForm" onsubmit="publishNotice(event)">
+                        <div class="mb-2">
+                            <label class="form-label small fw-semibold">सूचना का शीर्षक (Title)</label>
+                            <input type="text" id="noticeTitleInput" class="form-control form-control-sm" placeholder="उदा: परीक्षा सारणी जारी" required>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label small fw-semibold">कैटेगरी (Category Badge)</label>
+                            <select id="noticeCategoryInput" class="form-select form-select-sm">
+                                <option value="नवीनतम|bg-danger">नवीनतम (Urgent/Red)</option>
+                                <option value="सूचना|bg-primary">सामान्य सूचना (General/Blue)</option>
+                                <option value="कार्यक्रम|bg-success">कार्यक्रम/Event (Green)</option>
+                            </select>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label small fw-semibold">दिनांक (Date)</label>
+                            <input type="text" id="noticeDateInput" class="form-control form-control-sm" placeholder="उदा: 15 Oct 2026">
+                        </div>
+                        <button type="submit" class="btn btn-sm btn-success w-100 mt-2 fw-semibold"><i class="fas fa-paper-plane me-1"></i> सूचना प्रकाशित करें</button>
+                    </form>
+                </div>
+
+                <!-- Main Public Notice Board Card -->
+                <div class="card custom-card notice-board-card p-3 sticky-lg-top" style="top: 80px;">
+                    <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-3">
+                        <h5 class="fw-bold m-0 text-dark"><i class="fas fa-bullhorn text-danger me-2"></i>सूचना पट (Notice Board)</h5>
+                        <span class="badge bg-danger rounded-pill pulse">LIVE</span>
+                    </div>
+
+                    <div id="noticesContainer">
+                        <!-- Dynamic Notices List -->
+                        <div class="notice-item" id="notice-1">
+                            <div class="d-flex w-100 justify-content-between align-items-center mb-1">
+                                <span class="badge bg-danger rounded-pill custom-badge">नवीनतम</span>
+                                <small class="notice-date">14 Oct 2026</small>
+                            </div>
+                            <div class="fw-semibold text-dark">सत्र 2026-27 के लिए नियमित कक्षाओं का समय-सारणी उपलब्ध है।</div>
+                            <i class="fas fa-trash-alt delete-btn d-none admin-action" onclick="deleteNotice('notice-1')" title="Delete Notice"></i>
+                        </div>
+
+                        <div class="notice-item" id="notice-2">
+                            <div class="d-flex w-100 justify-content-between align-items-center mb-1">
+                                <span class="badge bg-primary rounded-pill custom-badge">सूचना</span>
+                                <small class="notice-date">10 Oct 2026</small>
+                            </div>
+                            <div class="fw-semibold text-dark">कक्षा 9वीं एवं 11वीं के छात्रवृत्ति आवेदन फॉर्म कार्यालय में जमा करें।</div>
+                            <i class="fas fa-trash-alt delete-btn d-none admin-action" onclick="deleteNotice('notice-2')" title="Delete Notice"></i>
+                        </div>
+
+                        <div class="notice-item" id="notice-3">
+                            <div class="d-flex w-100 justify-content-between align-items-center mb-1">
+                                <span class="badge bg-success rounded-pill custom-badge">कार्यक्रम</span>
+                                <small class="notice-date">05 Oct 2026</small>
+                            </div>
+                            <div class="fw-semibold text-dark">वार्षिक खेलकूद प्रतियोगिता हेतु पंजीकरण की अंतिम तिथि 20 अक्टूबर है।</div>
+                            <i class="fas fa-trash-alt delete-btn d-none admin-action" onclick="deleteNotice('notice-3')" title="Delete Notice"></i>
+                        </div>
+                    </div>
+
+                    <div class="text-center border-top pt-3 mt-3">
+                        <small class="text-muted"><i class="fas fa-info-circle me-1"></i> सभी आधिकारिक सूचनाएं इसी बोर्ड पर अपडेट की जाती हैं।</small>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mt-5 pt-4">
+            <div class="card custom-card p-4">
+                <div class="row">
+                    <div class="col-md-6 mb-4 mb-md-0 border-end-md">
+                        <h4 class="fw-bold mb-3" style="color: var(--primary-maroon);"><i class="fas fa-address-book me-2"></i>संपर्क सूत्र</h4>
+                        <p class="mb-2"><strong>उच्च माध्यमिक विद्यालय, परसा उत्तरी</strong></p>
+                        <p class="text-muted mb-2"><i class="fas fa-map-marker-alt text-danger me-2"></i>प्रखंड: एकमा, जिला: सारण (बिहार) - 841208</p>
+                        <p class="text-muted mb-2"><i class="fas fa-phone-alt text-success me-2"></i>हेल्पलाइन / कार्यालय: +91 8809997352, +91 9128838606</p>
+                        <p class="text-muted mb-2"><i class="fas fa-envelope text-primary me-2"></i>ईमेल: info@parsauttarischool.edu.in</p>
+                        <p class="text-muted mb-0"><i class="fas fa-clock text-warning me-2"></i>कार्यालय समय: सोमवार - शनिवार (10:00 AM - 04:00 PM)</p>
+                    </div>
+                    <div class="col-md-6 ps-md-4">
+                        <h4 class="fw-bold mb-3" style="color: var(--primary-maroon);"><i class="fas fa-paper-plane me-2"></i>पूछताछ फ़ॉर्म (Inquiry)</h4>
+                        <form onsubmit="alert('आपका संदेश प्राप्त हो गया है। धन्यवाद!'); return false;">
+                            <div class="mb-2">
+                                <input type="text" class="form-control form-control-sm" placeholder="आपका नाम" required>
+                            </div>
+                            <div class="mb-2">
+                                <input type="tel" class="form-control form-control-sm" placeholder="मोबाइल नंबर" required>
+                            </div>
+                            <div class="mb-2">
+                                <textarea class="form-control form-control-sm" rows="3" placeholder="अपना संदेश या प्रश्न यहाँ लिखें..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-sm btn-dark w-100 fw-semibold">संदेश भेजें</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h5>उच्च माध्यमिक विद्यालय, परसा उत्तरी</h5>
+                    <p class="small text-light text-opacity-75">शिक्षा विभाग, बिहार सरकार द्वारा संचालित माध्यमिक एवं उच्च माध्यमिक विद्यालय।</p>
+                    <p class="small mb-0">
+                        UDISE CODE: <strong>10170608805</strong> | 
+                        माध्यमिक: <strong>91409</strong> | 
+                        उच्च माध्यमिक: <strong>41358</strong>
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h5>त्वरित लिंक्स</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-1"><a href="#home" class="text-white text-decoration-none">मुख्य पृष्ठ</a></li>
+                        <li class="mb-1"><a href="#staff-section" class="text-white text-decoration-none">शिक्षक सूची</a></li>
+                        <li class="mb-1"><a href="#notice-section" class="text-white text-decoration-none">सूचना पट</a></li>
+                        <li class="mb-1"><a href="#contact" class="text-white text-decoration-none">संपर्क करें</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>लोकेशन</h5>
+                    <p class="small">प्रखंड-एकमा, सारण (बिहार)</p>
+                    <p class="small text-warning mb-0"><i class="fas fa-shield-alt me-1"></i> सर्वाधिकार सुरक्षित © 2026</p>
+                </div>
+            </div>
+            <hr class="my-4 border-secondary">
+            <div class="text-center small text-light text-opacity-50">
+                Designed & Developed for Higher Secondary School Parsa Uttari, Saran
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom Script for Admin PIN Security & Local/Session State -->
+    <script>
+        // Default Security PIN
+        const ADMIN_PIN = "1234";
+        let isAdminLoggedIn = false;
+
+        // Load notices from LocalStorage if available
+        document.addEventListener("DOMContentLoaded", () => {
+            loadSavedNotices();
+        });
+
+        function toggleAdminLogin() {
+            if (isAdminLoggedIn) {
+                logoutAdmin();
+                return;
+            }
+
+            const inputPin = prompt("कृपया Admin Password / PIN दर्ज करें:");
+            if (inputPin === ADMIN_PIN) {
+                isAdminLoggedIn = true;
+                document.getElementById('adminNoticePanel').classList.remove('d-none');
+                document.getElementById('adminBtnText').innerText = "Logout
